@@ -1,0 +1,349 @@
+/* Reset des marges et des paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul, li{
+    list-style: none;
+}
+body{
+    background-color: #c0c0c0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+/* Menu principale */
+.menu{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 20px;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+}
+.menu li{
+    position: relative;
+    min-width: 100px;
+}
+.menu>li{
+    position: relative;
+    float: left;
+}
+.menu a{
+    padding: 10px 20px;
+    display: block;
+    color: rgba(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 30px;
+    text-decoration: none;
+}
+.menu li:hover a{
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Menu Déroulant */
+.dropdown{
+    padding:0;
+    background-color: rgba(221, 221, 221, 0.7);
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+}
+.dropdown li{
+    border-bottom: black;  /* Ne marche pas idk*/
+    white-space: nowrap;
+    opacity:0;
+    transform: rotateY(90deg);
+    transition: opacity .4s, transform .5s;
+}
+.dropdown li:last-child {
+    border-bottom: none;
+}
+.dropdown li a {
+    text-decoration: none; /* Supprimer la décoration par défaut */
+    color: #000;
+    display: block;
+}
+.menu li:hover .dropdown {
+    display: block; /* Le sous-menu devient visible */
+}
+.menu li:hover .dropdown li {
+    transform: rotate(0deg);
+    opacity: 1;
+    transition: opacity .3s ease, transform .5s ease;
+}
+/* Effet sur les liens du sous-menu */
+.menu .dropdown li:hover a {
+    color: #000000;
+}
+.menu .left {
+    font-size: 35px;
+    margin-right: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 550;
+}
+.menu .right {
+    margin-left: 10px;
+}
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx SOMMAIRE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+.sommaire{
+    padding: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sommaire h1{
+    font-size: 30px;
+    font-weight: 80;
+}
+.sommaire li{
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx CONTENU xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+article{
+    padding: 20px;
+    padding-bottom: 100px;
+}
+.container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    max-width: 1200px;
+    height: 600px;
+    /*background: #dddddd;*/
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.num{
+    display:flex;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    padding-left: 60px;
+    position: absolute;
+    overflow: hidden;
+}
+.num .img{
+    width: 260px;
+    height: 260px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+}
+.num .img img{
+    width: 100%;
+    height: 100%;
+    opacity:0;
+    transition:0.6s;
+}
+#slide1:checked~.num1 img,
+#slide2:checked~.num2 img,
+#slide3:checked~.num3 img{
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+.num .content {
+    flex:1;
+    padding: 0 30px 0 35px;
+    position: relative;
+    left:100px;
+    opacity:0;
+    transition: 0.6s;
+}
+#slide1:checked~.num1 .content,
+#slide2:checked~.num2 .content,
+#slide3:checked~.num3 .content{
+    opacity: 1;
+    z-index:9;
+    left:0;
+    transition-delay: 0.3s;
+}
+.num .title{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.num .text{
+    font-size: 17px;
+    color: #000;
+    text-align: justify;
+    margin-bottom: 25px;
+    max-width:1000px;
+
+}
+.num a{
+    padding: 13px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    letter-spacing:1px;
+    font-weight: 600;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+    float: right;
+}
+.slider{
+    /* margin: 30px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacement entre les slides */
+    position: absolute;
+    bottom: 40px;
+    left: 55%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.slider .slide{
+    width: 50px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: incline-flex;
+    margin: 0 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.slider .slide::before{
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s;
+}
+#slide1:checked~.slider .slide-1::before,
+#slide2:checked~.slider .slide-2::before,
+#slide3:checked~.slider .slide-3::before{
+    width: 100%;
+    transform: scaleX(1);
+}
+
+.btn{
+    opacity:0;  /* à enlever */
+}
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx FOOTER xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+footer ul{
+    padding: 0;
+    margin: 0;
+}
+.foot{
+    padding: 0 360px;
+}
+.blank{
+    height: 1000px;
+    width: 1000px;
+}
+footer{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.37);
+    min-height: 300px;
+    padding-top: 50px;
+}
+footer .footMenu{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 200px;
+}
+footer .footMenu li .list{
+
+}
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx RESPONSIVE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+/* ----------------------------------- Version Mobile (Responsive) --------------------------- */
+@media (max-width: 768px) {
+    /* ----------------------------------- NAV ----------------------------------*/
+    nav{
+        width: 100%;
+    }
+    .menu {
+
+        font-size: 12px;
+        margin: 10px 0;
+    }
+    .menu li{
+        position: relative;
+        min-width: 8px;
+    }
+    .menu .left {
+        font-size: 20px;
+        font-weight: 550;
+    }
+    /* -------------------------------- SOMMAIRE ----------------------------------*/
+    .sommaire {
+        width: 100%;
+        padding: 20px; /* Réduit les espacements sur petits écrans */
+        font-size: 12px;
+    }
+    .sommaire h1{
+        font-size: 20px;
+        font-weight: 80;
+    }
+    .sommaire li{
+        fon-size: 16px;
+    }
+    /* -------------------------------- CONTENU ----------------------------------*/
+    .container {
+        width: 100%;
+        padding: 10px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: center;
+    }
+    .num{
+        width: 100%;
+        padding-top: 50px;
+        padding-left: 0px;
+        flex-direction: column;
+        text-align: center;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .num .content {
+        padding: 30px 2px 20px 2px;
+        margin-bottom: 30px;
+    }
+    .num .img{
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        flex-shrink: 0;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+    }
+    .num .title {
+        font-size: 24px;
+    }
+    .num .text {
+        font-size: 14px;
+    }
+    .slider {
+        left: 50%;
+        bottom: 20px;
+    }
+}
