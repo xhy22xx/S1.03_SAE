@@ -1,4 +1,4 @@
-/* Reset des marges et des paddings */
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx MISE EN PAGE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 * {
     margin: 0;
     padding: 0;
@@ -13,19 +13,25 @@ body{
     justify-content: center;
     align-items: center;
 }
+p{
+    font-size: 18px;
+}
 
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx NAVBAR & MENU PRINCIPALE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 nav {
     display: flex;
     justify-content: center;
+    margin-right: 10px;
+    align-items: center;
+    /* height: 100vh; */
+    padding-right: 20px;
 }
-/* Menu principale */
 .menu{
     display: flex;
     justify-content: flex-start;
     width: 100%;
     margin: 20px;
     padding: 0;
-    display: flex;
     list-style-type: none;
 }
 .menu li{
@@ -48,7 +54,7 @@ nav {
     color: rgba(0, 0, 0, 0.7);
 }
 
-/* Menu Déroulant */
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx MENU DEROULANT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 .dropdown{
     padding:0;
     background-color: rgba(221, 221, 221, 0.7);
@@ -72,19 +78,18 @@ nav {
     border-bottom: none;
 }
 .dropdown li a {
-    text-decoration: none; /* Supprimer la décoration par défaut */
+    text-decoration: none;
     color: #000;
     display: block;
 }
 .menu li:hover .dropdown {
-    display: block; /* Le sous-menu devient visible */
+    display: block;
 }
 .menu li:hover .dropdown li {
     transform: rotate(0deg);
     opacity: 1;
     transition: opacity .3s ease, transform .5s ease;
 }
-/* Effet sur les liens du sous-menu */
 .menu .dropdown li:hover a {
     color: #000000;
 }
@@ -95,6 +100,7 @@ nav {
     font-weight: 550;
 }
 .menu .right {
+    font-size: 16px;
     margin-left: 10px;
 }
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx SOMMAIRE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
@@ -105,18 +111,21 @@ nav {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .sommaire h1{
-    font-size: 30px;
-    font-weight: 80;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 .sommaire li{
     display: block;
-    margin-bottom: 2px;
 }
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx CONTENU xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 article{
-    padding: 20px;
-    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    padding: 20px 20px 100px 20px;
 }
 .container{
     width: 100vw;
@@ -216,7 +225,7 @@ article{
     width: 50px;
     height: 10px;
     background-color: rgba(0, 0, 0, 0.2);
-    display: incline-flex;
+    display: inline-flex;
     margin: 0 3px;
     border-radius: 5px;
     cursor: pointer;
@@ -225,7 +234,7 @@ article{
 }
 .slider .slide::before{
     content: "";
-    width: 0%;
+    width: 0;
     height: 100%;
     background-color: #000;
     border-radius: 5px;
@@ -247,31 +256,60 @@ article{
     opacity:0;  /* à enlever */
 }
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx FOOTER xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
-
+footer{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.37);
+    min-height: 200px;
+    padding-top: 50px;
+}
 footer ul{
     padding: 0;
     margin: 0;
 }
 .foot{
-    padding: 0 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 200px;
 }
-.blank{
-    height: 1000px;
-    width: 1000px;
+.footlist li {
+    width: auto; /* Largeur par défaut pour tous */
 }
-footer{
+.footlist li:not(:first-child){
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.37);
-    min-height: 300px;
-    padding-top: 50px;
 }
 footer .footMenu{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 200px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 footer .footMenu li .list{
-
+}
+.footIcons{
+    width: 70px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 5px;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #555;
+    color: white;
+}
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx OPTIONS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+.back-to-top{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #000000;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx RESPONSIVE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 /* ----------------------------------- Version Mobile (Responsive) --------------------------- */
@@ -290,7 +328,7 @@ footer .footMenu li .list{
         min-width: 8px;
     }
     .menu .left {
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 550;
     }
     /* -------------------------------- SOMMAIRE ----------------------------------*/
@@ -301,11 +339,12 @@ footer .footMenu li .list{
     }
     .sommaire h1{
         font-size: 20px;
-        font-weight: 80;
+        font-weight: 600;
     }
     .sommaire li{
-        fon-size: 16px;
+        font-size: 12px;
     }
+
     /* -------------------------------- CONTENU ----------------------------------*/
     .container {
         width: 100%;
@@ -314,15 +353,13 @@ footer .footMenu li .list{
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: center;
     }
     .num{
-        width: 100%;
+        width: 90%;
         padding-top: 50px;
-        padding-left: 0px;
+        padding-left: 0;
         flex-direction: column;
         text-align: center;
-        width: 90%;
         margin-bottom: 20px;
     }
     .num .content {
@@ -345,5 +382,34 @@ footer .footMenu li .list{
     .slider {
         left: 50%;
         bottom: 20px;
+    }
+    /* ------------------------------- PIED DE PAGE --------------------------------*/
+    footer{
+        padding-top: 20px;
+    }
+    footer .footMenu {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur les petits écrans */
+        gap: 10px; /* Réduit le gap pour les petits écrans */
+    }
+    .foot {
+        padding: 0 10px; /* Réduit le padding pour les petits écrans */
+    }
+    .footlist li:not(:first-child) {
+        width: 100%;
+    }
+    .footlist{
+        min-width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .footMenu{
+        flex-direction: column;
+    }
+    .footIcons{
+        width: 60px;
+        max-width: 80px;
+    }
+    .footer-bottom{
+        margin-top: 20px;
     }
 }
