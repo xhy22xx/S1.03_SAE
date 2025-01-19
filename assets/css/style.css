@@ -186,6 +186,7 @@ section{
     padding: 10px 0 10px 0;
 }
 .container{
+    margin: 100px 0 100px 0;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -437,6 +438,9 @@ section{
     opacity: 0;
 }
 /* xxxxxxxxxxxxxx STRUCTURE xxxxxxxxxxxxx */
+.struct{
+    margin: 20px 0 90px 0;
+}
 .img-container {
     display: flex; /* Les images seront alignées en ligne */
     flex-wrap: wrap; /* Permet de passer à la ligne si l'espace manque */
@@ -465,6 +469,7 @@ section{
 }
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ITEMS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 .item{
+    margin: 10px 0 100px 0;
     width: 1000px;
     height: 200px;
     background: #dddddd;
@@ -596,6 +601,23 @@ h3 {
         position: relative;
         padding: 10px;
         font-size: 12px;
+    }
+    /* ------ DANS RAPPORT ------ */
+    .step{
+        margin-top: 20px;
+        font-size: 12px;
+    }
+    .step a:hover{
+        color: rgba(0, 0, 0, 0.65);
+    }
+    .step ul{
+        display: flex;
+        margin: auto;
+    }
+    .step ul li{
+        position: relative;
+        padding: 5px;
+        font-size: 10px;
     }
     /* -------------------------------- CONTENU ----------------------------------*/
     h1{

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="../css/style.css"/>
+    <title>Rapport</title>
+</head>
+<body>
+<!------------------------------ En-tête ------------------------------------------>
+<header></header>
+<!------------------------------ Navbar ------------------------------------------->
+<nav>
+    <ul class="menu">
+        <li class="left"><a href="#">Machine Virtuelle</a></li>
+        <li class="right"><a href="../../index.html">Accueil</a></li>
+        <li class="right">
+            <a href="../others_pages/rapport.html">Rapport</a>
+        </li>
+    </ul>
+</nav>
+
+<!--------------------------- Contenu principal --------------------------------->
+<main>
+    <div class="step">
+        <ul>
+            <li><a href="installations.html">Installation</a></li>
+            <li><a href="configuration.html">Configuration</a></li>
+            <li><a href="creations.html">Users</a></li>
+            <li><a href="serveur.html">Serveur Web</a></li>
+            <li><a href="questions.html">Questions</a></li>
+        </ul>
+    </div>
+    <section>
+        <h1>Configuration de la VM</h1>
+    </section>
+    <article class="structB">
+        <div class="box-list">
+            <div class="box">
+                <h3>- Sélection de la langue et du pays</h3>
+                <img src="../images/rapport/x1.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Configuration du clavier</h3>
+                <img src="../images/rapport/x2.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Saisie d’un nom pour le système</h3>
+                <img src="../images/rapport/x3.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Configuration du réseau (1)</h3>
+                <img src="../images/rapport/x4.png" alt=image">
+            </div>
+        </div>
+        <div class="text-container">
+            <p><strong>(1)</strong> : Réseau .lan. VM connectée au réseau local. Reçoit sa propre adresse IP du routeur.
+                VM peut communiquer avec d’autres appareils sur le réseau local. Utile pour héberger des serveurs(web).
+                Simule mieux un environnement de réseau réel</p>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Création d’un mot de passe pour root</h3>
+                <img src="../images/rapport/x5.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Création de l’utilisateur et son mdp</h3>
+                <img src="../images/rapport/x6.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Partitionnement du disque(2)</h3>
+                <img src="../images/rapport/x7.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Sélection du disque SCSI</h3>
+                <img src="../images/rapport/x8.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Choix du partitionnement(3)</h3>
+                <img src="../images/rapport/x9.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Affichages des partitions et validations</h3>
+                <img src="../images/rapport/x10.png" alt=image">
+            </div>
+        </div>
+        <div class="text-container">
+            <p><strong>(2) (3)</strong> : Permet de faire une configuration assez simple. Installation plus simple et plus rapide. <br>
+                Les partitions sont déjà créer. ( <strong>/</strong>racine, <strong>swap</strong>, <strong>/home</strong>). Idéal pour les débutants.</p>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Valider les changements</h3>
+                <img src="../images/rapport/x11.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Continue l'installation</h3>
+                <img src="../images/rapport/x12.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Configurer pays d'archive miroir Debian</h3>
+                <img src="../images/rapport/x13.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Choix miroir d'archive (celle proposée)</h3>
+                <img src="../images/rapport/x14.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Laisse vide, pas de proxy</h3>
+                <img src="../images/rapport/x15.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Configuration popularity-contest(4)</h3>
+                <img src="../images/rapport/x16.png" alt=image">
+            </div>
+        </div>
+        <div class="text-container">
+            <p>
+                <strong>(4)</strong> : Cette configuration sert à collecter des données sur les paquets installés pour <strong>améliorer Debian</strong>. <br>
+                Pas interessée par cette collecte.
+            </p>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Choix des logiciels(5)</h3>
+                <img src="../images/rapport/x17.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Installation programme démarrage GRUB(6)</h3>
+                <img src="../images/rapport/x18.png" alt=image">
+            </div>
+        </div>
+        <div class="text-container">
+            <p>
+                <strong>(5)</strong> :
+                <strong>1 7 12</strong>-> ceux proposés pour l’installation<br>
+                <strong>11</strong>-> serveur SSH, permet d’accéder à un serveur distant<br>
+                <strong>10</strong>-> serveur web, utile pour hébergement web<br>
+                <strong>(6)</strong> : essentiel pour démarrer correctement un ordinateur, lorsqu’ils a plusieurs OS installés.
+            </p>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Choix périphériques(7)</h3>
+                <img src="../images/rapport/x19.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Fin de configurations</h3>
+                <img src="../images/rapport/x20.png" alt=image">
+            </div>
+        </div>
+        <div class="text-container">
+            <p><strong>(7)</strong> : Installation sur disque /dev/sda (disque principal du système). Disque principal de démarrage. Permet s’assurer que le chargeur de démarrage soit bien positionné sur le disque principal, permet ainsi au système de démarrer correctement et de prendre en charge des configurations multi-boot ou autres besoins spécifiques.</p>
+        </div>
+    </article>
+</main>
+<!------------------------------ Pied de page ------------------------------------>
+<footer>
+    <div class="foot">
+        <ul class="footMenu">
+            <li>
+                <ul class="footlist">
+                    <li>
+                        <h3>Éditeur</h3>
+                    </li>
+                    <li>BEN HADJ YOUNES Dora</li>
+                    <li>XU Célia</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="footlist">
+                    <li>
+                        <h3>Enseignants</h3>
+                    </li>
+                    <li>Emmanuel Paviot-Adet et Philippe Darche</li>
+                    <li>Mme Nina Fouilleul</li>
+                    <li>Laurent Giustignano</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="footlist">
+                    <li>
+                        <h3>Contact</h3>
+                    </li>
+                    <li>Email des professeurs: [prenom].[nom]@u-paris.fr</li>
+                    <li>Adresse: 143 avenue de Versailles, 75016 Paris</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="footlist">
+                    <li>
+                        <h3>Suivez-nous</h3>
+                        <div class="lien-sociaux">
+                            <a href="https://github.com/xhy22xx/S1.03_SAE.git">
+                                <img src="../images/icons/github.png" class="footIcons" alt="Github logo">
+                            </a>
+                            <a href="https://iutparis-seine.u-paris.fr/">
+                                <img src="../images/icons/upc.jpg" class="footIcons" alt="logo IUT Paris Cité">
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!-- Top -->
+    <a href="#" class="back-to-top">↑</a>
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 Etudiant IUT Rives-De-Seine. Tous droits réservés.</p>
+    </div>
+</footer>
+</body>

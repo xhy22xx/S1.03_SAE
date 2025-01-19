@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,57 +34,66 @@
         </ul>
     </div>
     <section>
-        <h1>Installation et configuration du serveur web</h1>
+        <h1>Créations des utilisateurs, administrateur et groupe</h1>
     </section>
     <article>
         <div class="struct">
             <div class="text-container">
-                <p><strong>Choix de serveur Apache pk?</strong></p>
-            </div>
-            <div class="text-container">
-                <p>Installation d'Apache.</p>
-            </div>
-            <div class="img-container">
-                <img src="../images/rapport/" alt="Installation">
-            </div>
-            <div class="text-container">
-                <p>ddd<br>
-                </p>
-            </div>
-            <div class="text-container">
                 <p>
-                    Add<br>
+                    Après l’installation, mettre à jour les paquets.<br>
                 </p>
             </div>
             <div class="img-container">
-                <img src="../images/rapport/bsddng" alt="Configuration">
+                <img src="../images/rapport/b1.png" alt="Configuration">
             </div>
             <div class="text-container">
-                <p><br>
+                <p>Puis, ajouter l’utilisateur au groupe <strong>sudo</strong> pour avoir les privilèges
+                    d’administrateur à partir de l’utilisateur root. <br>
+                    Puis se déconnecter et se reconnecter.<br>
                 </p>
             </div>
             <div class="img-container">
-                <img src="../images/rapport/bsdsng" alt="Création">
+                <img src="../images/rapport/b2.png" alt="Création">
             </div>
             <div class="text-container">
-                <p>
-                <br></p>
+                <p>Ensuite, on crée des comptes utilisateurs, administrateur et groupes.<br>
+                    Avec la commande <strong>useradd</strong> on ajoute un utilisateur. <br>
+                    Avec l’option <strong>-m</strong>, elle permet la création d’un répertoire personnel de
+                    l’utilisateur et <strong>-G sudo</strong> , va ajouter l’utilisateur au groupe sudo (ayant des
+                    droits d’administrateurs).<br>
+                    La commande <strong>passwd</strong> permet de définir un mot de passe pour l’utilisateur.<br>
+                    La création d’un groupe se fait par la commande <strong>groupadd</strong>. L’option
+                    <strong>-aG</strong> permet d’ajouter l’utilisateur à un groupe sans le retirer des autres groupes
+                    dont il fait déjà partie.<br>
+                    Pour vérifier, on va consulter dans le fichier <strong>/etc/group</strong>, si les 2 binômes font
+                    bien partie du groupe BinomeG1.<br>
+                </p>
             </div>
             <div class="img-container">
-                <img src="../images/rapport/sdg" alt="Création">
-                <img src="../images/rapport/bsdng" alt="Création">
+                <img src="../images/rapport/b3.png" alt="Création">
+                <img src="../images/rapport/b4.png" alt="Création">
             </div>
-
-        </div>
-    </article>
-    <!------------------------------- QUESTION CHOIX ---------------------------------->
-    <section>
-        <h1>Choix du serveur : Apache</h1>
-    </section>
-    <article>
-        <div class="struct">
             <div class="text-container">
-                <p><strong>Lui pckkkk</strong></p>
+                <p>Enfin, la personnalisation de l’invite de commande :<br></p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/c1.png" alt="Personalisation">
+                <img src="../images/rapport/c2.png" alt="Personalisation">
+                <img src="../images/rapport/c3.png" alt="Personalisation">
+                <img src="../images/rapport/c4.png" alt="Personalisation">
+                <img src="../images/rapport/c5.png" alt="Personalisation">
+                <img src="../images/rapport/c6.png" alt="Personalisation">
+            </div>
+            <div class="text-container">
+                <p>Avec la commande <strong>chsh</strong> (change shell), elle permet de modifier le shell par défaut
+                    pour un utilisateur donnée. <br>
+                    Ici on le change en <strong>/bin/bash.</strong> <br>
+                    Après exécution de cette commande, se déconnecter puis se reconnecter pour voir le changement
+                    effectuée.<br>
+                    Bash permet une personnalisation du prompt plus poussée, tandis que d’autres shells comme
+                    <strong>sh</strong> ou <strong>dash</strong> offrent des invites moins personnalisables ( moins
+                    d’options ).<br>
+                </p>
             </div>
         </div>
     </article>
