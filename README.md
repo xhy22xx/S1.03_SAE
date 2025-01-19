@@ -1,10 +1,7 @@
 # SAÉ S1.03 - Installation d’un poste pour le développement
+Réaliser en période B: Novembre 2024 - Janvier 2025.
 
-Informations générales:
-Projet : Installation d'une machine virtuelle et héberger un site.
-Période B: Novembre 2024 - Janvier 2025.
-Binôme : G1.
-Groupe : 108.
+Nous sommes le Binôme G1 du Groupe 108.
 
 Éditeurs : 
   BEN HADJ YOUNES Dora
