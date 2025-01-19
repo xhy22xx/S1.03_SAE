@@ -183,7 +183,7 @@ article img {
     height: auto;     /* Maintenir les proportions */
 }
 section{
-    padding: 10px 0 10px 0;
+    padding: 20px 0 20px 0;
 }
 .container{
     margin: 100px 0 100px 0;
@@ -616,7 +616,7 @@ h3 {
     }
     .step ul li{
         position: relative;
-        padding: 5px;
+        padding: 10px 5px 10px 5px;
         font-size: 10px;
     }
     /* -------------------------------- CONTENU ----------------------------------*/
