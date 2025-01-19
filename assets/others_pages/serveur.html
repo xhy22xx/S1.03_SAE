@@ -34,57 +34,209 @@
         </ul>
     </div>
     <section>
+        <h1>Choix du serveur (Apache)</h1>
+    </section>
+    <section>
+        <p>Nous avons opté pour le serveur Apache en raison d’une plus grande simplicité lors de l’installation et de la
+            configuration. <br>
+            Nous avions suivi les étapes décrites à partir de la vidéo pédagogique fournie par l’un des enseignants qui
+            encadre ce projet. <br>
+            Ce serveur virtuelle a été configuré sur une autre machine virtuelle ( Ubuntu ).<br>
+            Nous avons détailler les étapes clés que nous avons suivies pour configurer et déployer un site web. <br>
+            Chaque étape sera expliquée afin de mettre en évidence le processus suivi, ainsi que les choix effectués
+            pour atteindre les objectifs du projet.<br>
+        </p>
+    </section>
+    <section>
         <h1>Installation et configuration du serveur web</h1>
     </section>
     <article>
         <div class="struct">
             <div class="text-container">
-                <p><strong>Choix de serveur Apache pk?</strong></p>
+                <p><strong>1 - Mise en réseau<br></strong></p>
             </div>
             <div class="text-container">
-                <p>Installation d'Apache.</p>
+                <p>La première étape consiste à vérifier l'adresse IP attribuée à la machine virtuelle par le réseau
+                    domestique. Cette adresse sera nécessaire pour accéder au serveur web depuis un navigateur. <br>
+                    Commande utilisée: <strong>ip -c addr</strong></p>
             </div>
             <div class="img-container">
-                <img src="../images/rapport/" alt="Installation">
+                <img src="../images/rapport/s1.png" alt="Installation">
             </div>
             <div class="text-container">
-                <p>ddd<br>
+                <p><strong>2 - Installation du serveur web </strong><br>
+                </p>
+            </div>
+            <div class="text-container">
+                <p>Nous installons Apache, un serveur web, avec la commande suivante :
+                    <strong>sudo apt install apache2</strong><br>
+                    Après installation, le répertoire par défaut pour les fichiers web se situe dans /var/www/html. Nous
+                    vérifions son contenu avec la commande: <strong>ls /var/www/html/</strong><br>
+                    Le fichier index.html, présent par défaut, peut être consulté avec :
+                    <strong>more /var/www/html/index.html</strong>.
+                    Cela affiche le code HTML de la page d’accueil par défaut d’Apache.
+                    <br>
                 </p>
             </div>
             <div class="text-container">
                 <p>
-                    Add<br>
+                    <strong>3 - Création d’un nouveau site </strong>
                 </p>
-            </div>
-            <div class="img-container">
-                <img src="../images/rapport/bsddng" alt="Configuration">
-            </div>
-            <div class="text-container">
-                <p><br>
-                </p>
-            </div>
-            <div class="img-container">
-                <img src="../images/rapport/bsdsng" alt="Création">
             </div>
             <div class="text-container">
                 <p>
-                <br></p>
+                    Nous voulons déplacer les fichiers web dans un nouveau répertoire. Cependant, les permissions par défaut ne le permettent pas, car le répertoire /var/www/html/ appartient à root.<br>
+                    Étapes :<br>
+                    -	Créer un nouveau répertoire utilisateur :  <strong>mkdir ~/monsite.fr</strong><br>
+                    -	Créer un fichier de test :  <strong>echo "Hello world!" > ~/monsite.fr/test.html</strong><br>
+                    -	Vérification dans le navigateur : Accéder à l’IP du serveur suivie de /test.html (exemple : http://192.168.1.10/test.html).<br>
+                    Si une erreur "NOT FOUND" apparaît, cela indique un problème de configuration dans Apache.<br>
+                </p>
             </div>
             <div class="img-container">
-                <img src="../images/rapport/sdg" alt="Création">
-                <img src="../images/rapport/bsdng" alt="Création">
+                <img src="../images/rapport/s2.png" alt="CréationSite">
             </div>
-
-        </div>
-    </article>
-    <!------------------------------- QUESTION CHOIX ---------------------------------->
-    <section>
-        <h1>Choix du serveur : Apache</h1>
-    </section>
-    <article>
-        <div class="struct">
             <div class="text-container">
-                <p><strong>Lui pckkkk</strong></p>
+                <p>
+                    <strong>4 - Configuration d’Apache </strong><br>
+                </p>
+            </div>
+            <div class="text-container">
+                <p>
+                    Pour configurer correctement Apache :<br>
+                    Il faut tout d’abord, accédez au répertoire de configuration d’Apache :
+                    <strong>cd /etc/apache2/</strong><br>
+                    <strong>ls</strong>
+                    <br>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s3.png" alt="ConfApache">
+            </div>
+            <div class="text-container">
+                <p>
+                    Ensuite, identifiez les fichiers clés :<br>
+                    -	apache2.conf : configuration principale d’Apache.<br>
+                    -	Dossiers sites-available/ et sites-enabled/ :<br>
+                    <strong>sites-available</strong> contient les fichiers de configuration des sites web.<br>
+                    <strong>sites-enabled</strong> contient les liens symboliques des sites activés.<br>
+                    Puis, créez un fichier de configuration pour votre site : <strong>sudo vi 000-default.conf</strong><br>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s4.png" alt="ConfApache">
+            </div>
+            <div class="text-container">
+                <p>
+                    <strong>5 - Résolution des problèmes d’accès </strong>
+                </p>
+            </div>
+            <div class="text-container">
+                <p>
+                    Pour identifier les problèmes, consultez les journaux d’erreur :
+                    Avec <strong>cd /var/log/apache2/</strong>  puis  <strong>tail error.log</strong>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s5.png" alt="ConfApache">
+            </div>
+            <div class="text-container">
+                <p>
+                    On apprend qu'on a un problème de permission sur le fichier avec la commande <strong>sudo vi apache2.conf.</strong><br>
+                    On va ajouter un répertoire directory avec le nom du site et le nom d’utilisateur. Puis, pour enregistrer on va faire <strong>sudo systemctl reload apache2.service</strong>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s6.png" alt="ConfApache">
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s7.png" alt="ConfApache">
+            </div>
+            <div class="text-container">
+                <p>
+                    Problème : Permissions insuffisantes sur le répertoire.<br>
+                    Résolution : Modifier les permissions : <strong>chmod o+x dbhy</strong> Problème résolu
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s8.png" alt="ConfApache">
+            </div>
+            <div class="text-container">
+                <p>
+                    <strong>6 - Création de liens symboliques </strong>
+                </p>
+            </div>
+            <div class="text-container">
+                <p>
+                    Pour respecter la structure par défaut d’Ubuntu, les services web sont souvent placés dans /srv/. Vous pouvez créer un lien symbolique entre /srv/ et votre répertoire :<br>
+                    -	sudo ln -s /home/usr/monsite.fr  monsite.fr<br>
+                    -	Modifier le fichier de configuration pour votre site avec <strong>sudo vi 000-default.conf</strong><br>
+                    Au lieu d’avoir <strong>/home/usr/monsite.fr</strong>, on va avoir juste srv/monsite.fr<br>
+                    -	Retourner dans la configuration d’apache par défaut et activé la partie srv<br>
+                    -	<strong>Sudo vi /etc/apache2/apache2.conf</strong><br>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s9.png" alt="CreationLien">
+            </div>
+            <div class="text-container">
+                <p><strong>
+                    7 - Navigation par default
+                </strong></p>
+            </div><div class="text-container">
+                <p>Par défaut, lorsque vous accédez à l’adresse d’un dossier (sans spécifier une page précise comme index.html), Apache permet de naviguer dans les répertoires si l’option Indexes est activée.<br>
+                    cd monsite.fr<br>
+                    mkdir autre<br>
+                    cp test.html autre/autre.html<br>
+                    Si je recharge la page, on peut naviguer de directory en directory<br>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s10.png" alt="Navigation">
+            </div>
+            <div class="text-container">
+                <p><strong>8 - Désactiver l’indexation des répertoires </strong></p>
+            </div>
+            <div class="text-container">
+                <p>Pour empêcher la navigation dans les répertoires :<br>
+                    Sudo vi /etc/apcahe 2/apche2.conf<br>
+                    Suppression de la configuration indexe<br>
+                    Recharger apache: Sudo systemctl reload apache2.service<br>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s11.png" alt="Desactivation">
+            </div>
+            <div class="text-container">
+                <p><strong>9 - Configuration d’une page d’accueil par défaut </strong></p>
+            </div>
+            <div class="text-container">
+                <p>Pour que la page d’accueil par défaut du site s’affiche automatiquement :
+                    <strong>mv test.html index.html</strong>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s12.png" alt="ConfPageAccueil">
+            </div>
+            <div class="text-container">
+                <p><strong>10 - Configuration avec WebStorm pour un déploiement efficace </strong></p>
+            </div>
+            <div class="text-container">
+                <p>Configurer WebStorm :<br>
+                    Ouvrir WebStorm, puis allez dans <strong>Tools > Deployment</strong> > Configuration<br>
+                    Ajoutez une nouvelle configuration de déploiement en sélectionnant SFTP.<br>
+                    Renseignez les informations de connexion :<br>
+                    -	Host : Adresse IP de votre serveur (exemple : 192.168.1.10).<br>
+                    -	Port : 22 (par défaut pour SSH/SFTP).<br>
+                    -	Root Path : /home/usr/monsite.fr.<br>
+                    -	Nom d’utilisateur et mot de passe ou clé SSH pour l’authentification.<br>
+                    -	Testez la connexion.<br>
+                    Déploiement automatique :<br>
+                    -	Dans WebStorm, développez votre projet local, faites un clic droit, et sélectionnez <strong>Upload to...</strong> pour envoyer les fichiers au serveur.<br>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/s13.png" alt="ConfWebStorm">
             </div>
         </div>
     </article>
