@@ -14,7 +14,7 @@ body{
     align-items: center;
 }
 p{
-    font-size: 16px;
+    font-size: 20px;
 }
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx NAVBAR & MENU PRINCIPALE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
@@ -422,7 +422,7 @@ section{
     margin-bottom: 10px;
 }
 .card .content .p{
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.4em;
 }
 .card .content{
