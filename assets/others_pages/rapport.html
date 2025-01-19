@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,29 +18,261 @@
         <li class="right"><a href="../../index.html">Accueil</a></li>
         <li class="right">
             <a href="../others_pages/rapport.html">Rapport</a>
-            <!-------------------------- Menu Déroulant --------------------------------->
-            <ul class="dropdown">
-                <li><a href="#">étape 1</a></li>
-                <li><a href="#">étape 2</a></li>
-            </ul>
         </li>
     </ul>
 </nav>
 
 <!--------------------------- Contenu principal --------------------------------->
 <main>
-    <div class="sommaire">
-        <h1>Sommaire</h1>
+    <div class="step">
         <ul>
-            <li>- Introduction</li>
-            <li>- A propos de nous</li>
-            <li>- Notre travail</li>
+            <li><a href="rapport.html">Installation VM</a></li>
+            <li><a href="serveur.html">Serveur Web</a></li>
+            <li><a href="questions.html">Questions</a></li>
         </ul>
     </div>
+    <section>
+        <h1>Création de la VM</h1>
+    </section>
+    <article>
+        <div class="struct">
+            <div class="text-container">
+                <p>Installation de Linux sur VMware Workstation.</p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/a1.png" alt="Installation">
+                <img src="../images/rapport/a2.png" alt="Installation">
+                <img src="../images/rapport/a3.png" alt="Installation">
+                <img src="../images/rapport/a4.png" alt="Installation">
+                <img src="../images/rapport/a5.png" alt="Installation">
+            </div>
+            <div class="text-container">
+                <p>Remarque :<br>
+                    Lors de la création d’une machine virtuelle dans VirtualBox, on nous propose une configuration
+                    réseau dès la création. <br>
+                    Alors que dans VMware Workstation, on ne nous demande pas de spécifier une configuration réseau lors
+                    de cette première phase d’installation.<br>
+                </p>
+            </div>
+        </div>
+    </article>
+    <section>
+        <h1>Configuration de la VM</h1>
+    </section>
+    <article class="structB">
+        <div class="box-list">
+            <div class="box">
+                <h3>- Sélection de la langue et du pays</h3>
+                <img src="../images/rapport/x1.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Configuration du clavier</h3>
+                <img src="../images/rapport/x2.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Saisie d’un nom pour le système</h3>
+                <img src="../images/rapport/x3.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Configuration du réseau (1)</h3>
+                <img src="../images/rapport/x4.png" alt=image">
+            </div>
+        </div>
+        <div class="text-container">
+            <p><strong>(1)</strong> : Réseau .lan. VM connectée au réseau local. Reçoit sa propre adresse IP du routeur.
+                VM peut communiquer avec d’autres appareils sur le réseau local. Utile pour héberger des serveurs(web).
+                Simule mieux un environnement de réseau réel</p>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Création d’un mot de passe pour root</h3>
+                <img src="../images/rapport/x5.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Création de l’utilisateur et son mdp</h3>
+                <img src="../images/rapport/x6.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Partitionnement du disque(2)</h3>
+                <img src="../images/rapport/x7.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Sélection du disque SCSI</h3>
+                <img src="../images/rapport/x8.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Choix du partitionnement(3)</h3>
+                <img src="../images/rapport/x9.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Affichages des partitions et validations</h3>
+                <img src="../images/rapport/x10.png" alt=image">
+            </div>
+        </div>
+        <div class="text-container">
+            <p><strong>(2) (3)</strong> : Permet de faire une configuration assez simple. Installation plus simple et plus rapide. <br>
+                Les partitions sont déjà créer. ( <strong>/</strong>racine, <strong>swap</strong>, <strong>/home</strong>). Idéal pour les débutants.</p>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Valider les changements</h3>
+                <img src="../images/rapport/x11.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Continue l'installation</h3>
+                <img src="../images/rapport/x12.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Configurer pays d'archive miroir Debian</h3>
+                <img src="../images/rapport/x13.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Choix miroir d'archive (celle proposée)</h3>
+                <img src="../images/rapport/x14.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Laisse vide, pas de proxy</h3>
+                <img src="../images/rapport/x15.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Configuration popularity-contest(4)</h3>
+                <img src="../images/rapport/x16.png" alt=image">
+            </div>
+        </div>
+        <div class="text-container">
+            <p>
+                <strong>(4)</strong> : Cette configuration sert à collecter des données sur les paquets installés pour <strong>améliorer Debian</strong>. <br>
+                Pas interessée par cette collecte.
+            </p>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Choix des logiciels(5)</h3>
+                <img src="../images/rapport/x17.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Installation programme démarrage GRUB(6)</h3>
+                <img src="../images/rapport/x18.png" alt=image">
+            </div>
+        </div>
+        <div class="text-container">
+            <p>
+                <strong>(5)</strong> :
+                <strong>1 7 12</strong>-> ceux proposés pour l’installation<br>
+                <strong>11</strong>-> serveur SSH, permet d’accéder à un serveur distant<br>
+                <strong>10</strong>-> serveur web, utile pour hébergement web<br>
+                <strong>(6)</strong> : essentiel pour démarrer correctement un ordinateur, lorsqu’ils a plusieurs OS installés.
+            </p>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Choix périphériques(7)</h3>
+                <img src="../images/rapport/x19.png" alt=image">
+            </div>
+        </div>
+        <div class="box-list">
+            <div class="box">
+                <h3>- Fin de configurations</h3>
+                <img src="../images/rapport/x20.png" alt=image">
+            </div>
+        </div>
+        <div class="text-container">
+            <p><strong>(7)</strong> : Installation sur disque /dev/sda (disque principal du système). Disque principal de démarrage. Permet s’assurer que le chargeur de démarrage soit bien positionné sur le disque principal, permet ainsi au système de démarrer correctement et de prendre en charge des configurations multi-boot ou autres besoins spécifiques.</p>
+        </div>
+    </article>
+    <section>
+        <h1>Créations des utilisateurs, administrateur et groupe</h1>
+    </section>
+    <article>
+        <div class="struct">
+            <div class="text-container">
+                <p>
+                    Après l’installation, mettre à jour les paquets.<br>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/b1.png" alt="Configuration">
+            </div>
+            <div class="text-container">
+                <p>Puis, ajouter l’utilisateur au groupe <strong>sudo</strong> pour avoir les privilèges
+                    d’administrateur à partir de l’utilisateur root. <br>
+                    Puis se déconnecter et se reconnecter.<br>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/b2.png" alt="Création">
+            </div>
+            <div class="text-container">
+                <p>Ensuite, on crée des comptes utilisateurs, administrateur et groupes.<br>
+                    Avec la commande <strong>useradd</strong> on ajoute un utilisateur. <br>
+                    Avec l’option <strong>-m</strong>, elle permet la création d’un répertoire personnel de
+                    l’utilisateur et <strong>-G sudo</strong> , va ajouter l’utilisateur au groupe sudo (ayant des
+                    droits d’administrateurs).<br>
+                    La commande <strong>passwd</strong> permet de définir un mot de passe pour l’utilisateur.<br>
+                    La création d’un groupe se fait par la commande <strong>groupadd</strong>. L’option
+                    <strong>-aG</strong> permet d’ajouter l’utilisateur à un groupe sans le retirer des autres groupes
+                    dont il fait déjà partie.<br>
+                    Pour vérifier, on va consulter dans le fichier <strong>/etc/group</strong>, si les 2 binômes font
+                    bien partie du groupe BinomeG1.<br>
+                </p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/b3.png" alt="Création">
+                <img src="../images/rapport/b4.png" alt="Création">
+            </div>
+            <div class="text-container">
+                <p>Enfin, la personnalisation de l’invite de commande :<br></p>
+            </div>
+            <div class="img-container">
+                <img src="../images/rapport/c1.png" alt="Personalisation">
+                <img src="../images/rapport/c2.png" alt="Personalisation">
+                <img src="../images/rapport/c3.png" alt="Personalisation">
+                <img src="../images/rapport/c4.png" alt="Personalisation">
+                <img src="../images/rapport/c5.png" alt="Personalisation">
+                <img src="../images/rapport/c6.png" alt="Personalisation">
+            </div>
+            <div class="text-container">
+                <p>Avec la commande <strong>chsh</strong> (change shell), elle permet de modifier le shell par défaut
+                    pour un utilisateur donnée. <br>
+                    Ici on le change en <strong>/bin/bash.</strong> <br>
+                    Après exécution de cette commande, se déconnecter puis se reconnecter pour voir le changement
+                    effectuée.<br>
+                    Bash permet une personnalisation du prompt plus poussée, tandis que d’autres shells comme
+                    <strong>sh</strong> ou <strong>dash</strong> offrent des invites moins personnalisables ( moins
+                    d’options ).<br>
+                </p>
+            </div>
+        </div>
+    </article>
 </main>
-<article>
-
-</article>
 <!------------------------------ Pied de page ------------------------------------>
 <footer>
     <div class="foot">
@@ -48,21 +280,20 @@
             <li>
                 <ul class="footlist">
                     <li>
-                        <h3>À propos</h3>
+                        <h3>Éditeur</h3>
                     </li>
-                    <li>About </li>
-                    <li>About </li>
-                    <li>About </li>
+                    <li>BEN HADJ YOUNES Dora</li>
+                    <li>XU Célia</li>
                 </ul>
             </li>
             <li>
                 <ul class="footlist">
                     <li>
-                        <h3>À propos</h3>
+                        <h3>Enseignants</h3>
                     </li>
-                    <li>About </li>
-                    <li>About </li>
-                    <li>About </li>
+                    <li>Emmanuel Paviot-Adet et Philippe Darche</li>
+                    <li>Mme Nina Fouilleul</li>
+                    <li>Laurent Giustignano</li>
                 </ul>
             </li>
             <li>
@@ -70,9 +301,8 @@
                     <li>
                         <h3>Contact</h3>
                     </li>
-                    <li>About </li>
-                    <li>About </li>
-                    <li>Adresse: 143 avenue de Versailles, 75016 Paris </li>
+                    <li>Email des professeurs: [prenom].[nom]@u-paris.fr</li>
+                    <li>Adresse: 143 avenue de Versailles, 75016 Paris</li>
                 </ul>
             </li>
             <li>
